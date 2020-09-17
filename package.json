@@ -1,6 +1,6 @@
 {
   "name": "menufexp",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Menu that emulates file explorer",
   "main": "app5.js",
   "scripts": {
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EugeneAltshuler/formyself.git"
+    "url": "git+https://github.com/EugeneAltshuler/memyself.git"
   },
   "keywords": [
     "menu",
@@ -18,7 +18,7 @@
   "author": "Eugene Altshuler",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/EugeneAltshuler/formyself/issues"
+    "url": "https://github.com/EugeneAltshuler/memyself/issues"
   },
-  "homepage": "https://github.com/EugeneAltshuler/formyself#readme"
+  "homepage": "https://github.com/EugeneAltshuler/memyself#readme"
 }

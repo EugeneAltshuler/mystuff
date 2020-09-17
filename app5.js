@@ -216,20 +216,20 @@ let tarr=[]; let barr=[];
 		const bm=document.createElement("div");
 		bm.className='_menub';
 		bm.id="bmid";
-		bm.innerHTML='';
+		bm.innerText='';
 
 
 		const tm=document.createElement("div");
 		tm.id=this.prefix+"tmid";
 		tm.style.width="100%";
 
-		tm.innerHTML="";
+		tm.innerText="";
 		tm.className="_menut";
-		//tm.innerHTML='';
+		//tm.innerText='';
 		this.roo=document.getElementById(menuhook);
 		this.roo.style.display="block";
 		this.roo.className="_menu";
-		this.roo.innerHTML='';
+		this.roo.innerText='';
 		//this.roo.style.border="1px outset black;";
 		this.roo.append(this.xm);
 		this.roo.append(tm);
@@ -241,7 +241,7 @@ let tarr=[]; let barr=[];
 		const hr=document.createElement("hr");
 		hr.setAttribute("width","100%"); 
 		this.roo.append(hr);
-		//roo.innerHTML+="<hr width=100%>"
+		//roo.innerText+="<hr width=100%>"
 		this.roo.append(bm);
 		let rl=-1;
 		if (rootit) rl=rootit
@@ -363,11 +363,11 @@ this.renderrrm=(e)=>{
 	rrfarr.forEach(mf=>{
 		let md=document.createElement('div')
 		md.style.cursor="pointer";
-		md.innerHTML=mf.name
+		md.innerText=mf.name
 		md.addEventListener('click',()=>mf.f(this.result));	
 		m.append(md);	
 		})
-	//m.innerHTML= m.innerHTML.replace(/itemtitle/ig,i.title);
+	//m.innerText= m.innerText.replace(/itemtitle/ig,i.title);
 	document.body.append(m);
 	m.style.textDecoration='none';
 	m.style.visibility='visible';
@@ -389,12 +389,12 @@ this.renderitm=(e,i)=>{
 		if (mf.type.indexOf(i.type)>=0){
 		let md=document.createElement('div')
 		md.style.cursor="pointer";
-		md.innerHTML=mf.name
+		md.innerText=mf.name
 		md.addEventListener('click',()=>mf.f(i));	
 		m.append(md);	
 		}
 	})
-	//m.innerHTML= m.innerHTML.replace(/itemtitle/ig,i.title);
+	//m.innerText= m.innerText.replace(/itemtitle/ig,i.title);
 	document.body.append(m);
 	m.style.textDecoration='none';
 	m.style.visibility='visible';
@@ -424,7 +424,7 @@ this.rendermks=(e,i)=>{
 	t.style.selfAlign="center";
 	sm.append(t);
 	t=document.createElement("div"); t.className="_ssm"; t.style.fontWeight="bold";	t.style.display="block";	
-	t.innerHTML='Children:';
+	t.innerText='Children:';
 	sm.append(t);
 	let k=document.createElement("div"); k.className="_ssm";//this.cfg.mc	
 	k.style.display="flex";	
@@ -460,7 +460,7 @@ k=document.createElement("div"); k.className='_ssm';//this.cfg.mc
 	k.style.flexWrap='wrap';
 	k.style.borderRadius="5px";
 	k.style.border="3px black;";	t=document.createElement("div"); t.className='_ssm';//this.cfg.mc
-	t.innerHTML='Siblings:';
+	t.innerText='Siblings:';
 	//t.style.display="block";
 	sm.append(t);
 	i.siblings.forEach(s=>{		let t=s.itEl.cloneNode(true); k.append(t);//t.style.alignSelf="start"	
@@ -503,12 +503,12 @@ this.renderrtm=(e,i)=>{
 		if (mf.type.indexOf(i.type)>=0){
 		let md=document.createElement('div')
 		md.style.cursor="pointer";
-		md.innerHTML=mf.name
+		md.innerText=mf.name
 		md.addEventListener('click',()=>mf.f(i));	
 		m.append(md);	
 		}
 	})
-	//m.innerHTML= m.innerHTML.replace(/itemtitle/ig,i.title);
+	//m.innerText= m.innerText.replace(/itemtitle/ig,i.title);
 	document.body.append(m);
 	m.style.textDecoration='none';
 	m.style.visibility='visible';
@@ -527,7 +527,7 @@ this.renderr=()=>{
 	this.rm.id=this.prefix+"rmid";
 	this.rm.className='_menur'//this.cfg.mcr;
 	this.rm.style.border="5px white";
-	this.rm.innerHTML="Selected:";
+	this.rm.innerText="Selected:";
 
 	
 	
@@ -584,7 +584,7 @@ this.close=(e)=> setTimeout(()=>{
         while (child) { 
             this.roo.removeChild(child); 
             child = this.roo.lastElementChild; }
-						this.roo.InnerHTML=''; 
+						this.roo.innerText=''; 
 	this.roo.className='';
 	let tebu=this;
 	tebu=null;
