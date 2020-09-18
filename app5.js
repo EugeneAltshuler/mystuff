@@ -71,12 +71,17 @@ constructor(fu,trigger,menuhook='app',movehook='moveanchor',rootit=-1,items=[],r
 	this.result=result;
 	this.rid=this.cfg.rid;
 	this.sortmenu=()=>{
-		let srtmnu=document.createElement("div");	srtmnu.className="_spad"; srtmnu.id=this.prefix+"srtmenu"; 
-		srtmnu.innerHTML=`<div style='justify-content:space-between;'><span class='redclass' style='cursor:pointer;float:right;' id='${this.prefix}srtX'> &nbsp;X&nbsp; </span></div>
-		<span id='${this.prefix}so0' style='cursor:pointer;' >OrderNumber Asc</span><br/><span  style='cursor:pointer;'  id='${this.prefix}so1' >OrderNumber Desc</span><br/><span  style='cursor:pointer;'  id='${this.prefix}so2' >Title Asc</span><br/>
-		<span  style='cursor:pointer;'  id='${this.prefix}so3' >Title Desc</span><br/><span id='${this.prefix}so4'  style='cursor:pointer;'  >Value Asc</span><br/><span id='${this.prefix}so5'  style='cursor:pointer;'  >Value Desc</span>
-		`;
-		document.body.append(srtmnu);
+		let srtmnu=document.createElement("div");	srtmnu.className="_spad"; srtmnu.id=this.prefix+"srtmenu";//srtmnu.style.justifyContent="space-between" 
+		let sp0=document.createElement("div");	srtmnu.className="_spad"; srtmnu.id=this.prefix+"srtmenu";srtmnu.style.justifyContent="space-between" ;
+		let sp1=document.createElement("span");  sp1.style.cursor="pointer";sp1.style.float="right"; sp1.id=this.prefix+"srtX"; sp1.innerText=" X ";sp1.className="redclass"; sp1.width="100%";sp0.append(sp1); srtmnu.append(sp0);
+		let sp2=document.createElement("span");  sp2.style.cursor="pointer"; sp2.id=this.prefix+"so0"; sp2.innerText="OrderNumber Asc";srtmnu.append(sp2);
+		let sp3=document.createElement("span");  sp3.style.cursor="pointer"; sp3.id=this.prefix+"so1"; sp3.innerText="OrderNumber Desc";srtmnu.append(sp3);
+		let sp4=document.createElement("span");  sp4.style.cursor="pointer"; sp4.id=this.prefix+"so2"; sp4.innerText="Title Asc";srtmnu.append(sp4);
+		let sp5=document.createElement("span");  sp5.style.cursor="pointer"; sp5.id=this.prefix+"so3"; sp5.innerText="Title Desc";srtmnu.append(sp5);
+		let sp6=document.createElement("span");  sp6.style.cursor="pointer"; sp6.id=this.prefix+"so4"; sp6.innerText="Value Asc";srtmnu.append(sp6);
+		let sp7=document.createElement("span");  sp7.style.cursor="pointer"; sp7.id=this.prefix+"so5"; sp7.innerText="Value Desc";srtmnu.append(sp7);
+
+	document.body.append(srtmnu);
 		document.getElementById(this.prefix+'srtX').addEventListener('click',()=>{this.asc=1;this.srt=0; this.render();document.getElementById(this.prefix+'srtmenu').style.display='none'; });
 		document.getElementById(this.prefix+'so0').addEventListener('click',()=>{this.asc=1;this.srt=0; this.render();document.getElementById(this.prefix+'srtmenu').style.display='none'; });
 		document.getElementById(this.prefix+'so1').addEventListener('click',()=>{this.asc=-1;this.srt=0; this.render();document.getElementById(this.prefix+'srtmenu').style.display='none'; });
@@ -114,12 +119,30 @@ constructor(fu,trigger,menuhook='app',movehook='moveanchor',rootit=-1,items=[],r
 	//if(move) xm.addEventListener('mousedown',move.dmd);
 	let src= "data:image/gif;base64,R0lGODlhCgAKAIABAAAAAP///yH+EUNyZWF0ZWQgd2l0aCBHSU1QACH5BAEKAAEALAAAAAAKAAoAAAIWTIBgi9auWIzruHoP1RLipDyYtlVIAQA7";
 	if(this.srch!=null)src="data:image/gif;base64,R0lGODlhCgAKAIABAP8AAP///yH+EUNyZWF0ZWQgd2l0aCBHSU1QACH5BAEKAAEALAAAAAAKAAoAAAIWTIBgi9auWIzruHoP1RLipDyYtlVIAQA7";
-	xm.innerHTML=`	<span class='move' style='min-width:100px; cursor:move;background-color:transparent;'id=${movehook} > &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; </span>
+	let xm1=document.createElement("span"); xm1.className="move"; xm1.style.minWidth="100px";xm1.style.cursor="move";xm1.style.backgroundColor="transparent";xm1.id=movehook;
+	xm.append(xm1);
+	let xm2=document.createElement("span"); xm2.className="redclass"; xm2.style.float="right";xm2.style.top="5px";xm2.id=this.prefix+"x";xm2.innerText=" X "; xm.append(xm2);
+	let xm3=document.createElement("span"); xm3.className="whiteclass"; xm3.style.float="right";xm3.id=this.prefix+"itsrt";
+	let xm31=document.createElement("img"); 
+	xm31.src= "data:image/gif;base64,R0lGODlhCgAKAIABAAAAAP///yH+EUNyZWF0ZWQgd2l0aCBHSU1QACH5BAEKAAEALAAAAAAKAAoAAAIVTACWqGnf1HEMvrqog6jv6VmhNZEFADs=";xm31.id=this.prefix+"srt";
+	xm3.append(xm31);	xm.append(xm3);
+	let xm4=document.createElement("span"); xm4.className="whiteclass"; xm4.style.float="right";xm4.id=this.prefix+"itsrc";
+	let xm41=document.createElement("img"); 
+	xm41.src=src;xm41.id=this.prefix+"src";	xm4.append(xm41);	xm.append(xm4);
+	let xm5=document.createElement("span"); xm5.className="_white"; xm5.style.float="right";xm5.style.minWidth="50px";xm5.style.minHeight="10px";xm5.style.visibility="hidden";xm5.style.borderRadius="1px";xm5.contentEditable="true";	xm5.id=this.prefix+"itf"; xm.append(xm5);
+
+	/*xm.innerHTML=`	<span class='move' style='min-width:100px; cursor:move;background-color:transparent;'id=${movehook} > &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; </span>
 	 <span id='${this.prefix}x' class='redclass' style='float:right;top:5px;'> &nbsp; X &nbsp; </span>
 	<span class='whiteclass' id='itsrt' style='float:right;'><img id='${this.prefix}srt' src= "data:image/gif;base64,R0lGODlhCgAKAIABAAAAAP///yH+EUNyZWF0ZWQgd2l0aCBHSU1QACH5BAEKAAEALAAAAAAKAAoAAAIVTACWqGnf1HEMvrqog6jv6VmhNZEFADs="></span>
 	<span class='whiteclass' id='itsrc' style='float:right;'><img id='${this.prefix}src' src=${src}></span>
 	<span class='_white' id='${this.prefix}itf' style='min-width:50px;float:right;visibility:hidden;border-radius:1px;' contenteditable='true' >&nbsp;</span>
 	`;
+	xm.innerHTML=`	<span class='move' style='min-width:100px; cursor:move;background-color:transparent;'id=${movehook} > &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; </span>
+	 <span id='${this.prefix}x' class='redclass' style='float:right;top:5px;'> &nbsp; X &nbsp; </span>
+	<span class='whiteclass' id='itsrt' style='float:right;'><img id='${this.prefix}srt' src= "data:image/gif;base64,R0lGODlhCgAKAIABAAAAAP///yH+EUNyZWF0ZWQgd2l0aCBHSU1QACH5BAEKAAEALAAAAAAKAAoAAAIVTACWqGnf1HEMvrqog6jv6VmhNZEFADs="></span>
+	<span class='whiteclass' id='itsrc' style='float:right;'><img id='${this.prefix}src' src=${src}></span>
+	<span class='_white' id='${this.prefix}itf' style='min-width:50px;float:right;visibility:hidden;border-radius:1px;' contenteditable='true' >&nbsp;</span>
+	`;*/
 	this.xm=xm;
 ////////////////////////////////////////////////////////////////////
 this.getitembyid=(id)=>{ return this.items.filter(i=>i.id==id)[0]}

@@ -128,6 +128,7 @@ _mensmclass.innerHTML=`
 	text-decoration: none;
 	border-radius:5px;
 	padding: 15px;
+	cursor:pointer;
 	flex-direction:column;
 	flex-wrap:nowrap;
 	transition:opacity 1s;
@@ -143,6 +144,7 @@ export const  _menssmclass=document.createElement("style");
 _menssmclass.innerHTML=`
 ._ssm{
 	display:"flex";
+	cursor:pointer;
 	z-index: 15;
 	color: #000;
 	background-color:silver;
@@ -162,7 +164,7 @@ document.body.appendChild(_menssmclass);
 export const  _menmovclass=document.createElement("style"); 
 _menmovclass.innerHTML=`
 .mov{
-	min-width:100px;
+	min-width:100px;min-height:10px;
 	width:100px;
 	position:relative;
 	cursor: move;
