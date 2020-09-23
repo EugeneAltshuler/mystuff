@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/EugeneAltshuler/formyself.git"
+    "url": "git+https://github.com/EugeneAltshuler/mystuff.git"
   },
   "keywords": [
     "menu",
@@ -18,7 +18,7 @@
   "author": "Eugene Altshuler",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/EugeneAltshuler/formyself/issues"
+    "url": "https://github.com/EugeneAltshuler/mystuff/issues"
   },
-  "homepage": "https://github.com/EugeneAltshuler/formyself#readme"
+  "homepage": "https://github.com/EugeneAltshuler/mystuff#readme"
 }
