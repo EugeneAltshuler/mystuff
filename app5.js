@@ -119,8 +119,7 @@ constructor(fu,trigger,menuhook='app',movehook='moveanchor',rootit=-1,items=[],r
 	//if(move) xm.addEventListener('mousedown',move.dmd);
 	let src= "data:image/gif;base64,R0lGODlhCgAKAIABAAAAAP///yH+EUNyZWF0ZWQgd2l0aCBHSU1QACH5BAEKAAEALAAAAAAKAAoAAAIWTIBgi9auWIzruHoP1RLipDyYtlVIAQA7";
 	if(this.srch!=null)src="data:image/gif;base64,R0lGODlhCgAKAIABAP8AAP///yH+EUNyZWF0ZWQgd2l0aCBHSU1QACH5BAEKAAEALAAAAAAKAAoAAAIWTIBgi9auWIzruHoP1RLipDyYtlVIAQA7";
-	let xm1=document.createElement("span"); xm1.className="move"; xm1.style.minWidth="100px";xm1.style.cursor="move";xm1.style.backgroundColor="transparent";xm1.id=movehook;
-	xm.append(xm1);
+	let xm1=document.createElement("span"); xm1.className="mov"; xm1.style.minWidth="20px";xm1.style.cursor="move";xm1.style.backgroundColor="transparent";xm1.id=movehook;	xm.append(xm1);
 	let xm2=document.createElement("span"); xm2.className="redclass"; xm2.style.float="right";xm2.style.top="5px";xm2.id=this.prefix+"x";xm2.innerText=" X "; xm.append(xm2);
 	let xm3=document.createElement("span"); xm3.className="whiteclass"; xm3.style.float="right";xm3.id=this.prefix+"itsrt";
 	let xm31=document.createElement("img"); 
@@ -129,7 +128,7 @@ constructor(fu,trigger,menuhook='app',movehook='moveanchor',rootit=-1,items=[],r
 	let xm4=document.createElement("span"); xm4.className="whiteclass"; xm4.style.float="right";xm4.id=this.prefix+"itsrc";
 	let xm41=document.createElement("img"); 
 	xm41.src=src;xm41.id=this.prefix+"src";	xm4.append(xm41);	xm.append(xm4);
-	let xm5=document.createElement("span"); xm5.className="_white"; xm5.style.float="right";xm5.style.minWidth="50px";xm5.style.minHeight="10px";xm5.style.visibility="hidden";xm5.style.borderRadius="1px";xm5.contentEditable="true";	xm5.id=this.prefix+"itf"; xm.append(xm5);
+	let xm5=document.createElement("div"); xm5.className="_white"; xm5.style.float="right";xm5.style.minWidth="20px";xm5.style.minHeight="1px";xm5.style.visibility="hidden";xm5.style.borderRadius="1px"; xm5.contentEditable="true"; 	xm5.id=this.prefix+"itf";xm5.setAttribute('placeholder','Search Filter'); xm.append(xm5);
 
 	/*xm.innerHTML=`	<span class='move' style='min-width:100px; cursor:move;background-color:transparent;'id=${movehook} > &nbsp; &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp; </span>
 	 <span id='${this.prefix}x' class='redclass' style='float:right;top:5px;'> &nbsp; X &nbsp; </span>
