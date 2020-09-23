@@ -1,6 +1,6 @@
 {
   "name": "menufexp",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Menu that emulates file explorer",
   "main": "app5.js",
   "scripts": {
